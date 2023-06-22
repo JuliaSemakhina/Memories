@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,300&display=swap');
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+
+body {
+  height: 100vh;
+  background: #74ebd5;
+  background: linear-gradient(to right, #acb6e5, #74ebd5)  no-repeat center center fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(4, 11rem);
+  grid-template-rows: repeat(4, 9rem);
+  perspective: 800px;
+  grid-gap: 1rem;
+}
+
+.back {
+  background: url(./images/face.jpg);
+ backface-visibility: hidden;
+}
+
+.face, .back {
+  position: absolute;
+     width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.card {
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+  position: relative;
+/*  width: 100%;
+  height: 100%;*/
+  box-shadow: rgba(0,0,0,.2) 0px 5px 15px;
+}
+
+.toggleCard {
+  transform: rotateY(180deg);
+}
+
+h1 {
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+
+@media (max-width: 660px) {
+  section {
+      grid-template-columns: repeat(4, 8rem);
+  grid-template-rows: repeat(4, 6rem);
+  }
+}
